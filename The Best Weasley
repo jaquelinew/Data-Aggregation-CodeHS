@@ -1,0 +1,6 @@
+SELECT Person.first_name AS "Name", Sum(points) AS "Points"
+FROM Person JOIN HousePoint
+WHERE HousePoint.receiver = Person.id
+AND Person.last_name = "Weasley"
+GROUP BY Person.first_name
+ORDER BY Sum(points) DESC;
